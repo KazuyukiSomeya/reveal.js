@@ -12,7 +12,9 @@
     "Hakim El Hattab <hakim.elhattab@gmail.com>"
   ],
   "dependencies": {
-    "headjs": "~1.0.3"
+    "headjs": "~1.0.3",
+    "reveal.js-menu": "~0.6.0",
+    "reveal.js-plugins": "*"
   },
   "repository": {
     "type": "git",
