@@ -7,10 +7,15 @@
 		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-                <link rel="stylesheet" href="css/theme/black.css">
+                <link rel="stylesheet" href="css/theme/white.css">
 
+                <script src="bower_components/moment/min/moment-with-locales.min.js"></script>
                 <script src="bower_components/vis/dist/vis.min.js"></script>
                 <link href="bower_components/vis/dist/vis.min.css" rel="stylesheet" type="text/css" />
+
+
+                <link rel="stylesheet" href="bower_components/mermaid/dist/mermaid.css">
+                <script src="bower_components/mermaid/dist/mermaid.min.js"></script>
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -45,6 +50,7 @@
                                      {id: 6, content: 'item 6', start: '2013-04-27'}
                                   ]);
                                   var options = {
+                                    locale: 'ja_JP'
                                   };
                                   var timeline = new vis.Timeline(container, items, options);
                                 }"
@@ -86,14 +92,36 @@
                               </div>
                             </section>
                           </section>
-			  <section>Slide 2</section>
+                          <section>
+                            <section>mermaid</section>
+                            <section>
+                              <div class="mermaid">
+                                gantt
+                                  title A Gantt Diagram
+
+                                  section Section
+                                  A task           :a1, 2014-01-01, 30d
+                                  Another task     :after a1  , 20d
+                                  section Another
+                                  Task in sec      :2014-01-12  , 12d
+                                  anther task      : 24d
+                              </div>
+                            </section>
+                          </section>
 			</div>
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 
-		<script>
+                <script>
+                        // mermaid
+                        mermaid.initialize({
+                          startOnLoad:true,
+                          gantt: {
+                            fontSize: "32"
+                          }
+                        });
 			// More info https://github.com/hakimel/reveal.js#configuration
                         Reveal.initialize({
                                 width: 1920,
